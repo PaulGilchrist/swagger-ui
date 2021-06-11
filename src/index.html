@@ -76,8 +76,8 @@ window.onload = function() {
   // Build a system
   const ui = SwaggerUIBundle({
     urls: [ 
-		{ url: "http://localhost/contacts/swagger/v1/swagger.json", name: "Contacts" },
-		{ url: "http://localhost/products/swagger/v1/swagger.json", name: "Products" }
+		{ url: "http://localhost:8081/swagger/v1/swagger.json", name: "Contacts" },
+		{ url: "http://localhost:8082/swagger/v1/swagger.json", name: "Products" }
     ],
     "urls.primaryName": "Contacts",
     dom_id: '#swagger-ui',
