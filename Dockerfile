@@ -1,6 +1,6 @@
 # docker build --rm -f "Dockerfile" -t paulgilchrist/swagger-ui:latest .
 # docker push paulgilchrist/swagger-ui
-FROM nginx:alpine
+FROM --platform=linux/amd64 nginx:alpine
 LABEL author="Paul Gilchrist"
 COPY ./src /usr/share/nginx/html
 EXPOSE 80 443
