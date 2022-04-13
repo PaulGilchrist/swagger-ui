@@ -1,8 +1,8 @@
-# docker build --rm -f "Dockerfile" --platform linux/arm64 -t paulgilchrist/swagger-ui:arm64 .
-# docker push paulgilchrist/swagger-ui:arm64
+# docker build --rm -f "Dockerfile" --platform linux/arm64/v8 -t paulgilchrist/swagger-ui:arm64v8 .
+# docker push paulgilchrist/swagger-ui:arm64v8
 # docker build --rm -f "Dockerfile" --platform linux/amd64 -t paulgilchrist/swagger-ui:amd64 .
 # docker push paulgilchrist/swagger-ui:amd64
-# docker manifest create paulgilchrist/swagger-ui:latest paulgilchrist/swagger-ui:arm64 paulgilchrist/swagger-ui:amd64
+# docker manifest create --amend paulgilchrist/swagger-ui:latest paulgilchrist/swagger-ui:arm64v8 paulgilchrist/swagger-ui:amd64
 # docker manifest push paulgilchrist/swagger-ui:latest
 FROM nginx:alpine
 LABEL author="Paul Gilchrist"
