@@ -1,4 +1,4 @@
-# docker build --rm -f "Dockerfile" -t paulgilchrist/swagger-ui:arm64 .
+# docker build --rm -f "Dockerfile" --platform linux/arm64 -t paulgilchrist/swagger-ui:arm64 .
 # docker push paulgilchrist/swagger-ui:arm64
 # docker build --rm -f "Dockerfile" --platform linux/amd64 -t paulgilchrist/swagger-ui:amd64 .
 # docker push paulgilchrist/swagger-ui:amd64
