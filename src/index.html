@@ -63,7 +63,8 @@ window.onload = function() {
   const ui = SwaggerUIBundle({
     urls: [ 
 		{ url: "https://api.company.com/contacts/swagger/v1/swagger.json", name: "Contacts" }, // Set in local hosts file if using with kubernetes-example project
-		{ url: "https://api.company.com/products/swagger/v1/swagger.json", name: "Products" } // Set in local hosts file if using with kubernetes-example project
+		{ url: "https://api.company.com/products/v1/swagger/v1/swagger.json", name: "Products v1" }, // Set in local hosts file if using with kubernetes-example project
+		{ url: "https://api.company.com/products/v2/swagger/v1/swagger.json", name: "Products v2" } // Set in local hosts file if using with kubernetes-example project
     ],
     "urls.primaryName": "Contacts",
     dom_id: '#swagger-ui',
