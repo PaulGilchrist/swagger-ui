@@ -9,6 +9,12 @@ FROM nginx:alpine
 LABEL author="Paul Gilchrist"
 COPY ./src /usr/share/nginx/html
 EXPOSE 80 443
-ENTRYPOINT [ "nginx", "-g", "daemon off;" ]
+# Add bash
+RUN apk add --no-cache bash
+# Make our shell script executable
+RUN chmod +x /usr/share/nginx/html/env.sh
+# Start Nginx server
+CMD ["/bin/bash", "-c", "/usr/share/nginx/html/env.sh && nginx -g \"daemon off;\""]
+
 # docker run -d -p 8085:80 paulgilchrist/swagger-ui
 # docker rm -f <containerID>

@@ -57,14 +57,16 @@
 <div id="swagger-ui"></div>
 <script src="./swagger-ui-bundle.js"> </script>
 <script src="./swagger-ui-standalone-preset.js"> </script>
+<script src="./env-config.js"></script>
 <script>
 window.onload = function() {
   // https://swagger.io/docs/open-source-tools/swagger-ui/usage/installation/
+  console.log(JSON.stringify(window._env_, undefined, 4));
   const ui = SwaggerUIBundle({
     urls: [ 
-		{ url: "https://api.company.com/contacts/swagger/v1/swagger.json", name: "Contacts" }, // Set in local hosts file if using with kubernetes-example project
-		{ url: "https://api.company.com/products/v1/swagger/v1/swagger.json", name: "Products v1" }, // Set in local hosts file if using with kubernetes-example project
-		{ url: "https://api.company.com/products/v2/swagger/v1/swagger.json", name: "Products v2" } // Set in local hosts file if using with kubernetes-example project
+		{ url: `${window._env_.API_URL}/contacts/swagger/v1/swagger.json`, name: "Contacts" }, // Set in local hosts file if using with kubernetes-example project
+		{ url: `${window._env_.API_URL}/products/v1/swagger/v1/swagger.json`, name: "Products v1" }, // Set in local hosts file if using with kubernetes-example project
+		{ url: `${window._env_.API_URL}/products/v2/swagger/v1/swagger.json`, name: "Products v2" } // Set in local hosts file if using with kubernetes-example project
     ],
     "urls.primaryName": "Contacts",
     dom_id: '#swagger-ui',
