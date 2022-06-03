@@ -1,3 +1,3 @@
 window._env_ = {
-    API_URL: "https://api.company.com"
+    API_URL: "https://api.local.com"
 }
