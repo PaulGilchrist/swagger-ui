@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <title>Service Registry</title>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Source+Code+Pro:300,600|Titillium+Web:400,600,700" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="./swagger-ui.css" >
-  <link rel="stylesheet" type="text/css" href="./swagger-ui-custom.css" >
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/swagger-ui-dist/swagger-ui.css" >
+  <!--<link rel="stylesheet" type="text/css" href="https://unpkg.com/swagger-ui-dist/swagger-ui-custom.css" >-->
   <link rel="icon" type="image/png" href="./favicon-32x32.png" sizes="32x32" />
   <link rel="icon" type="image/png" href="./favicon-16x16.png" sizes="16x16" />
   <style>
@@ -55,14 +55,15 @@
   </defs>
 </svg>
 <div id="swagger-ui"></div>
-<script src="./swagger-ui-bundle.js"> </script>
-<script src="./swagger-ui-standalone-preset.js"> </script>
+<script src="https://unpkg.com/swagger-ui-dist/swagger-ui-bundle.js" crossorigin> </script>
+<script src="https://unpkg.com/swagger-ui-dist/swagger-ui-standalone-preset.js" crossorigin> </script>
 <script src="./env-config.js"></script>
 <script>
 window.onload = function() {
   // https://swagger.io/docs/open-source-tools/swagger-ui/usage/installation/
+  // https://github.com/swagger-api/swagger-ui
   console.log(JSON.stringify(window._env_, undefined, 4));
-  const ui = SwaggerUIBundle({
+  window.ui = SwaggerUIBundle({
     urls: [ 
 		{ url: `${window._env_.API_URL}/contacts/swagger/v1/swagger.json`, name: "Contacts" }, // Set in local hosts file if using with kubernetes-example project
 		{ url: `${window._env_.API_URL}/products/v1/swagger/v1/swagger.json`, name: "Products v1" }, // Set in local hosts file if using with kubernetes-example project
@@ -80,7 +81,6 @@ window.onload = function() {
     ],
     layout: "StandaloneLayout"
   })
-  window.ui = ui
 }
 </script>
 </body>
